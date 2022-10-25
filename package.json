@@ -1,0 +1,35 @@
+{
+  "name": "orm-sequelize",
+  "version": "1.0.0",
+  "description": "Em construção",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarolineBarbosaM/orm-sequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarolineBarbosaM/orm-sequelize/issues"
+  },
+  "homepage": "https://github.com/CarolineBarbosaM/orm-sequelize#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.4",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
