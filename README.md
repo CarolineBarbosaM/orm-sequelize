@@ -6,7 +6,7 @@ ORM feito com Sequelize em javascript. Nessa api utilizei conceitos como: criaç
 ### 1 - Clone o reposotório
 
 ```bash
-git clone git clone 
+git clone git clone https://github.com/CarolineBarbosaM/orm-sequelize.git
 
 ```
 
