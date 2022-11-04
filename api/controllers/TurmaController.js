@@ -1,9 +1,18 @@
+import sequelize from 'sequelize'
 import db from '../models/index'
 
+const Op = sequelize.Op
 class TurmaController {
     static async pegarTodasAsTurmas(req, res) {
+        const { data_inicial, data_final } = req.query
+        const where = {}
+
+        data_inicial || data_final ? where.data_inicio = {} : null
+        data_inicial ? where.data_inicio[Op.gte] = data_inicial : null
+        data_final ? where.data_inicio[Op.lte] = data_final : null
+
         try {
-            const todasAsTurmas = await db.Turmas.findAll()
+            const todasAsTurmas = await db.Turmas.findAll({ where })
             return res.status(200).json(todasAsTurmas)
         } catch (error) {
             return res.status(500).json(error.message)
@@ -64,6 +73,17 @@ class TurmaController {
             await db.Turmas.destroy({ where: { id: Number(id) } })
 
             return res.status(200).json('Turma deletada com sucesso!')
+        } catch (error) {
+            return res.status(500).json(error.message)
+        }
+    }
+    static async restauraTurma(req, res) {
+        const { id } = req.params
+
+        try {
+            await db.Turmas.restore({ where: { id: Number(id) } })
+
+            return res.status(200).json({ message: `id ${id} restaurado` })
         } catch (error) {
             return res.status(500).json(error.message)
         }

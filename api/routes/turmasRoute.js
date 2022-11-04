@@ -6,6 +6,7 @@ const router = Router()
 router.get('/turmas', TurmaController.pegarTodasAsTurmas)
 router.get('/turmas/:id', TurmaController.pegarUmaTurma)
 router.post('/turmas', TurmaController.criaTurma)
+router.post('/turmas/:id/ restaura', TurmaController.restauraTurma)
 router.put('/turmas/:id', TurmaController.atualizarTurma)
 router.delete('/turmas/:id', TurmaController.deletarTurma)
 
